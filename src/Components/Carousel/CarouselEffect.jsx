@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classes from "./carousel.module.css";
 import {img} from "./images/data"
+
 const CarouselEffect = () => {
   return (
     <div>
@@ -12,11 +13,11 @@ const CarouselEffect = () => {
         infiniteLoop={true} // Enables continuous looping through images
         showIndicators={false} // Hides the small indicator dots under the carousel
         showThumbs={false} // Hides the thumbnail previews of the images
-         showStatus={false} // Hides the status information (like image number)
+        showStatus={false} // Hides the status information (like image number)
 >
   {
-    img.map((imageItemLink)=>{
-      return <img src={imageItemLink} />
+    img.map((imageItemLink, i )=>{
+      return <img key = {i} src={imageItemLink} />
     })
   }
   </Carousel>
