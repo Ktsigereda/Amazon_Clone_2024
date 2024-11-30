@@ -9,7 +9,7 @@ useEffect(()=>{
     axios
     .get("https://fakestoreapi.com/products")
     .then((res)=>{
-        console.log(res)
+        // console.log(res)
         setProduct(res.data);
     }).catch((err)=>{
         console.log(err)

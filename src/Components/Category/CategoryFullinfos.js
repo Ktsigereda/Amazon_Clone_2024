@@ -9,7 +9,7 @@ export const categoryInfos = [
 
        {
         title:"Electronics",
-        name: "electornics",
+        name: "electronics",
         imgLink:
       "https://m.media-amazon.com/images/I/71O90hq0utL._AC_UL320_.jpg",
     },
