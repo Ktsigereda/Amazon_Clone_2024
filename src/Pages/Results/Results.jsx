@@ -38,6 +38,7 @@ const Results = () => {
                 key={product.id}
                 product={product} 
                 renderAdd={true}
+                renderDescription={false}
                 />
               ))
              }

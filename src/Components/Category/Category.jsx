@@ -10,7 +10,6 @@ const Category = () => {
     categoryInfos.map((infos, i) => {
         return <CategoryCard key ={i} data ={infos}/>;
     })
-    
 }
     </section>
   )

@@ -7,13 +7,12 @@ import {img} from "./images/data"
 const CarouselEffect = () => {
   return (
     <div>
-
 <Carousel 
-        autoPlay={true} // Enables auto-playing of images
-        infiniteLoop={true} // Enables continuous looping through images
-        showIndicators={false} // Hides the small indicator dots under the carousel
-        showThumbs={false} // Hides the thumbnail previews of the images
-        showStatus={false} // Hides the status information (like image number)
+        autoPlay={true} 
+        infiniteLoop={true} 
+        showIndicators={false} 
+        showThumbs={false} 
+        showStatus={false} 
 >
   {
     img.map((imageItemLink, i )=>{
@@ -22,7 +21,6 @@ const CarouselEffect = () => {
   }
   </Carousel>
   <div className={classes.hero_img}> </div>
-
     </div>
   )
 }

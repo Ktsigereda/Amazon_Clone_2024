@@ -6,21 +6,23 @@ import { SlLocationPin } from "react-icons/sl";
 import amazonLogo from "../../assets/icons/amazon_PNG11.png"
 import LowerHeader from './LowerHeader';
 import { Link, useNavigate } from "react-router-dom";
+import { DataContext } from '../DataProvider/DataProvider';
+import { useContext } from 'react';
 
 const Header = () => {
-  return (
-    <>
+const [{basket}, dispatch] = useContext(DataContext);
+console.log(basket.length)
+return (
+    <section className={classes.fixed}>
 
 <section className={classes.header_container}>
     <div className={classes.logo_container}>
-        {/*logo*/} 
         <Link to='/'>
             <img src={amazonLogo}/>
         </Link>
-         {/*delivevry*/}
         <div className={classes.delivery}>  
         <span>
-          <SlLocationPin />
+            <SlLocationPin />
         </span>
         <div>
             <p> Delivered to</p>
@@ -38,19 +40,16 @@ const Header = () => {
         <input type='text'  placeholder='search product'/>
     <BsSearch size={25} />
 </div>
- 
-    
     <div>
         {/*right side link */}
         <div className={classes.order_container}>
             <Link to='' className={classes.language}>
-         <img src= "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg" alt="USA flag" />
+            <img src= "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg" alt="USA flag" />
     
             <select name='' id=''>
                 <option value="">EN</option>
             </select>
             </Link>
-           
             {/* three components*/}
             <Link to='/auth'>
                     <p>Sign In</p>
@@ -63,14 +62,14 @@ const Header = () => {
             </Link>
             {/* cart */}
             <Link to="/cart" className={classes.cart}>
-           <BiCart size={35} />
-            <span>0</span>
+            <BiCart size={35} />
+            <span>{basket.length}</span>
             </Link>
         </div>
     </div>
   </section>
   <LowerHeader />
-    </>
+    </section>
   
   );
 }

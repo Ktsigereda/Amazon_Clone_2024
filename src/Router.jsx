@@ -17,10 +17,10 @@ function Router() {
                 <Route path="/orders" element={<Orders/>}/>
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/category/:categoryName" element={<Results />} />
-                  <Route path="/products/:productId" element={<ProductDetail />} />
+                <Route path="/products/:productId" element={<ProductDetail />} />
             </Routes>
         </BrowserRouter>
-  )
+    )
 };
 
 export default Router
