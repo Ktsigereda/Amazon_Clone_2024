@@ -43,7 +43,7 @@
     padding: 10px 0px;
 }
 
- .product_container {
+.product_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     max-width: 1450px;

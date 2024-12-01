@@ -11,7 +11,7 @@ const Results = () => {
   const {categoryName} = useParams()
   const [isLoading, setIsLoading] = useState(false);
   useEffect(()=>{
-     setIsLoading(true)
+    setIsLoading(true)
     axios.get(`${productUrl}/products/category/${categoryName}`)
     .then((res)=>{
   // console.log(res)
@@ -25,15 +25,15 @@ const Results = () => {
   
   return (
     <LayOut>
- <section>
+      <section>
         <h1 style={{ padding: "30px" }}>Results</h1>
         <p style={{ padding: "30px" }}>category/{categoryName}</p>
         <hr />
-             {
- isLoading?(<Loader/>):(
-  <div className={classes.results_container}>
-             {
-               results?.map((product) => (
+            {
+      isLoading?(<Loader/>):(
+      <div className={classes.results_container}>
+            {
+              results?.map((product) => (
                 <ProductCard 
                 key={product.id}
                 product={product} 
@@ -41,9 +41,9 @@ const Results = () => {
                 renderDescription={false}
                 />
               ))
-             }
+            }
           </div>)
-      }   
+            }   
       </section>
     </LayOut>
 

@@ -5,12 +5,15 @@ import { BiCart } from "react-icons/bi";
 import { SlLocationPin } from "react-icons/sl";
 import amazonLogo from "../../assets/icons/amazon_PNG11.png"
 import LowerHeader from './LowerHeader';
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { DataContext } from '../DataProvider/DataProvider';
 import { useContext } from 'react';
 
 const Header = () => {
 const [{basket}, dispatch] = useContext(DataContext);
+const totalItem = basket?.reduce((amount, item) => {
+    return item.amount + amount
+    },0);
 console.log(basket.length)
 return (
     <section className={classes.fixed}>
@@ -37,7 +40,7 @@ return (
         <select name='' id=''> 
             <option value=""> All</option>
         </select>
-        <input type='text'  placeholder='search product'/>
+        <input type='text'  placeholder='Search Amazon'/>
     <BsSearch size={25} />
 </div>
     <div>
@@ -57,13 +60,13 @@ return (
             </Link>
             {/* orders*/}
             <Link to='/orders'>
-                <p>returns</p>
+                <p>Returns</p>
                 <span>& Orders</span>
             </Link>
             {/* cart */}
             <Link to="/cart" className={classes.cart}>
-            <BiCart size={35} />
-            <span>{basket.length}</span>
+            <BiCart size={35}      /> 
+            <span>{totalItem}</span>
             </Link>
         </div>
     </div>
