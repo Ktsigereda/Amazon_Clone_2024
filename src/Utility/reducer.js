@@ -37,17 +37,17 @@ export const reducer = (state, action) => {
               newBasket[index] = {...newBasket[index],amount: newBasket[index].amount - 1,
            };
         }
-         else {
+        else {
      // If the amount is 1, remove the item from the basket
             newBasket.splice(index, 1);
-           }
+          }
       }
        return {
           ...state,
          basket:newBasket// Update the state with the new basket
        }
 
-    case Type.SET_USER:
+  case Type.SET_USER:
   return{
         ...state,
         user: action.user,

@@ -1,4 +1,4 @@
-import { Link,useNavigate, useLocation } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
 import classes from "./Auth.module.css"
 import {auth} from  "../../Utility/firebase"
 import { useState, useContext } from "react"
@@ -15,9 +15,6 @@ const Auth = () => {
   const [error, setError] = useState("");
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate = useNavigate();
-
-
-
   console.log(user)
   const [loading, setLoading] = useState({
     signIn: false,
@@ -67,8 +64,6 @@ const authHandler =async(e) => {
       
   };
 
-
-
   return (
   <section className={classes.login}>
     {/* Amazon logo*/}
@@ -79,12 +74,7 @@ const authHandler =async(e) => {
     {/* Authentication form */}
 <div className={classes.login_container}>
         <h1>Sign In</h1>
-        {/* {navStateData?.state?.msg && (
-          <small className={classes.auth__msg_login}>
-            {navStateData?.state?.msg}
-          </small>
-        )} */}
-
+        
         {/* Form with email and password fields */}
         <form action="">
           <div>
@@ -130,7 +120,7 @@ const authHandler =async(e) => {
           name="signUp"
           className={classes.register_btn}
         > 
-        {loading.signUp ?(<ClipLoader color="#000" size={15}></ClipLoader> ) : (
+        {loading.signUp?(<ClipLoader color="#000" size={15}></ClipLoader> ) : (
           "Create your Amazon Account"
           ) }
         </button>

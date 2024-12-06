@@ -15,7 +15,7 @@ const CarouselEffect = () => {
         showStatus={false} 
       >
       {
-        img.map((imageItemLink, i )=>{
+        img?.map((imageItemLink, i )=>{
         return <img key = {i} src={imageItemLink} />
         })
       }

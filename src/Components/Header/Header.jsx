@@ -9,6 +9,7 @@ import { Link} from "react-router-dom";
 import { DataContext } from '../DataProvider/DataProvider';
 import { useContext } from 'react';
 import {auth} from "../../Utility/firebase"
+
 const Header = () => {
 const [{basket, user}, dispatch] = useContext(DataContext);
 const totalItem = basket?.reduce((amount, item) => {
@@ -27,6 +28,7 @@ return (
         <span>
             <SlLocationPin />
         </span>
+        
         <div>
             <p> Delivered to</p>
             <span> Ethiopia</span>
@@ -41,7 +43,7 @@ return (
             <option value=""> All</option>
         </select>
         <input type='text'  placeholder='Search Amazon'/>
-    <BsSearch size={25} />
+    <BsSearch size={37} />
 </div>
     <div>
         {/*right side link */}
@@ -63,14 +65,14 @@ return (
                     {/* Greet the user */}
                     <span onClick={() => auth.signOut()}>Sign out</span>{" "}
                     {/* Sign out option */}
-                  </>
+                </>
                 ) : (
-                  <>
+                <>
                     <p>Hello, Sign In</p> {/* If no user, show Sign In */}
                     <span>Account & Lists</span>
-                  </>
+                </>
                 )}
-              </div>
+            </div>
 
             </Link>
             {/* orders*/}
