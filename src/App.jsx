@@ -1,5 +1,5 @@
 
-import './App.css'
+
 import Router from './Router'
 import { DataContext } from "./Components/DataProvider/DataProvider.jsx"
 import { auth } from "./Utility/firebase.js"; 
@@ -25,7 +25,7 @@ const [{ user },dispatch] = useContext(DataContext);
         });
       }
     });
-  }, []); // The effect depends on dispatch and runs only once (on mount)
+  }, []); 
 
   return (
     <>

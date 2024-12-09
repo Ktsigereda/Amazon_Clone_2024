@@ -8,7 +8,7 @@ export const initialState = {
 export const reducer = (state, action) => {
   switch (action.type) {
     case Type.ADD_TO_BASKET:
-//checking if the iten exists
+//checking if the item exists
     const existingItem = state.basket.find((item) => item.id === action.item.id);
         if (!existingItem) {
             return{
@@ -24,29 +24,29 @@ export const reducer = (state, action) => {
             ...state,
             basket: updatedBasket, // Update the state with the new basket
           };
-       }
+      }
     
-       case Type.REMOVE_FROM_BASKET:
+      case Type.REMOVE_FROM_BASKET:
           
        // Find the index of the item in the basket
-       const index = state.basket.findIndex(item => item.id === action.id);
-       let newBasket = [...state.basket];
+      const index = state.basket.findIndex(item => item.id === action.id);
+      let newBasket = [...state.basket];
 
         if (index >= 0) {
           if (newBasket[index].amount > 1) {
               newBasket[index] = {...newBasket[index],amount: newBasket[index].amount - 1,
-           };
+          };
         }
         else {
      // If the amount is 1, remove the item from the basket
             newBasket.splice(index, 1);
           }
       }
-       return {
+      return {
           ...state,
-         basket:newBasket// Update the state with the new basket
-       }
- case Type.EMPTY_BASKET:
+        basket:newBasket// Update the state with the new basket
+      }
+  case Type.EMPTY_BASKET:
   return{
     ...state,
     basket:[],

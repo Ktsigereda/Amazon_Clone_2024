@@ -8,7 +8,7 @@ const Orders = () => {
   const [{user}, dispatch] = useContext(DataContext)
   const [orders, setOrders] = useState([])
   useEffect(()=>{
-   if(user){
+    if(user){
  // Access the 'orders' collection in Firebase for the current user, sorted by creation time (desc)
       db.collection("users")
         .doc(user.uid)
@@ -24,10 +24,9 @@ const Orders = () => {
             }))
           );
         });
-   }else{
+    }else{
   setOrders([]); // If there's no user, clear the orders
-   }
-
+    }
 
   },[])
   return (
@@ -52,14 +51,13 @@ const Orders = () => {
                     key={order.id}
                     product={order} // Pass the product data to ProductCard
                     flex={true} // Apply flexible layout
-                 
                   />
                 ))}
               </div>
             ))}
       </div>
     </div>
-   </section>
+  </section>
     </LayOut>
   
   )

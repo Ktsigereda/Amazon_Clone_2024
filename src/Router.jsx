@@ -32,9 +32,6 @@ function Router() {
                     <ProtectedRoute msg={"You must log in to see your orders" } redirect={"/orders"}>
                             <Orders/> 
                     </ProtectedRoute>
-                  
-                    
-                    
                     }/>
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/category/:categoryName" element={<Results />} />
