@@ -9,6 +9,8 @@ import Results from "./Pages/Results/Results";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+
+
 function Router() {
     const stripePromise = loadStripe('pk_test_51LbrkLLF1TpSGnArAzaVIeqMg8IRm8SHWO20oCAFMBE8lPaa9uT45lqoRWg8TnQDHSb469NCsrSObpSbZsO0UNXg00kp8P7PHm');
     return (

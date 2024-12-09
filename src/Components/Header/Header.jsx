@@ -15,7 +15,7 @@ const [{basket, user}, dispatch] = useContext(DataContext);
 const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount
     },0);
-console.log(basket.length)
+// console.log(basket.length)
 return (
     <section className={classes.fixed}>
 
